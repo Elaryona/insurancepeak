@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Privacy policy — InsurancePeak</title><link href="https://insurancepeak.net/privacy//" rel="canonical"/>
+<meta content="InsurancePeak privacy policy." name="description"/>
+<link href="/lite.css?v11" rel="stylesheet"/>
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="InsurancePeak home">
+      <img src="/images/logo.png" alt="InsurancePeak logo" />
+      <div class="brand-name">
+        <div class="title">InsurancePeak</div>
+        <div class="tagline">Insurance guides for the US market</div>
+      </div>
+    </a>
+
+    <nav class="topnav" aria-label="Primary">
+      <a href="/" data-nav="overview">Overview</a>
+      <a href="/guides/" data-nav="guides">Guides</a>
+      <a href="/privacy/" data-nav="privacy">Privacy</a>
+      <a href="/disclosure/" data-nav="disclosure">Disclosure</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="btn btn-pill btn-cta" href="/guides/" data-nav="top-picks">Top picks</a>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme" title="Toggle theme">
+        <span class="theme-icon" aria-hidden="true">◐</span>
+      </button>
+    </div>
+  </div>
+</header>
+<main class="container">
+<h1>Privacy policy</h1>
+<p class="lead">Short and human-readable. No unnecessary tracking.</p>
+<div class="card pad">
+<p><strong>What we collect:</strong> Basic server logs (standard for hosting) and anonymized analytics if enabled. We do not sell personal data.</p>
+<p><strong>Cookies:</strong> We avoid non-essential cookies. If we add analytics, it will be privacy-friendly and disclosed here.</p>
+<p><strong>Contact:</strong> If you need data deletion or have questions, email the site operator listed in the disclosure.</p>
+</div>
+</main>
+<footer class="footer">
+<div class="container">
+<div>© 2026 InsurancePeak. Content is for informational purposes only.</div>
+</div>
+</footer>
+<script>
+(function() {
+  try {
+    var key = "elaryona_theme";
+    var saved = localStorage.getItem(key);
+    if (saved === "dark") document.documentElement.classList.add("theme-dark");
+    var btn = document.getElementById("themeToggle");
+    if (!btn) return;
+    btn.addEventListener("click", function() {
+      document.documentElement.classList.toggle("theme-dark");
+      localStorage.setItem(key, document.documentElement.classList.contains("theme-dark") ? "dark" : "light");
+    });
+  } catch (e) {}
+})();
+</script>
+</body>
+</html>
