@@ -7,80 +7,72 @@
 <title>InsurancePeak — Insurance guides for the US market</title><link href="https://insurancepeak.net/" rel="canonical"/>
 <meta content="Plain-English insurance guides for US consumers: car, renters, homeowners, and more." name="description"/>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
 
 :root {
-  --bg: #f3f5f7; --card: #ffffff; --text: #0b1220; --muted: #475569;
-  --line: #e5e7eb; --accent: #14b8a6; --accent2: #0891b2;
-  --shadow: 0 10px 28px rgba(2,6,23,.08); --radius: 18px;
+  --bg: #f8fafc; --card: #ffffff; --text: #0f172a; --muted: #64748b;
+  --line: #e2e8f0; --accent: #14b8a6; --accent-glow: rgba(20,184,166,0.3);
+  --radius: 24px;
 }
 
 .theme-dark {
-  --bg: #0b1220; --card: rgba(255,255,255,.06); --text: #f1f5f9;
-  --muted: #94a3b8; --line: rgba(255,255,255,.1);
+  --bg: #060b14; --card: #0f172a; --text: #f1f5f9; --muted: #94a3b8;
+  --line: rgba(255,255,255,0.06);
 }
 
 * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
-body { 
-  margin: 0; font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); 
-  line-height: 1.55; transition: background 0.3s, color 0.3s;
-}
-
-.container { max-width: 1040px; margin: 0 auto; padding: 0 18px; }
+body { margin: 0; font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; transition: all 0.3s ease; }
+.container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
 
 /* Header - VPNPeak Style */
 header.site-header {
-  background: radial-gradient(1200px 220px at 50% 0%, rgba(20,184,166,.25), transparent 55%),
-              linear-gradient(180deg, #0b1220 0%, #070b14 100%);
-  color: #fff; padding: 18px 0; border-bottom: 1px solid rgba(255,255,255,.08);
+  background: #0b1220; color: #fff; padding: 18px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
 }
-.header-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+.header-inner { display: flex; align-items: center; justify-content: space-between; }
 .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
 .brand img { width: 34px !important; height: auto !important; }
-.brand-name .title { font-size: 22px; font-weight: 800; color: #fff; margin: 0; letter-spacing: -.2px; }
-.brand-name .tagline { font-size: 11px; color: #14b8a6; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+.brand-name .title { font-size: 20px; font-weight: 800; color: #fff; margin: 0; }
+.brand-name .tagline { font-size: 10px; color: #14b8a6; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
 
-nav.topnav a { color: rgba(255,255,255,0.8); text-decoration: none; font-weight: 600; font-size: 14px; margin-left: 15px; }
-
-/* Buttons & Chips - The VPNPeak Glow */
+/* BUTTON FIX & STYLING */
 .btn { 
-  display: inline-flex; align-items: center; padding: 12px 24px; border-radius: 99px; 
-  font-weight: 700; text-decoration: none; transition: 0.3s;
+  display: inline-flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 12px 28px; border-radius: 99px; font-weight: 700; text-decoration: none; 
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); border: none; cursor: pointer;
+  line-height: 1.2; text-align: center;
 }
 .btn.accent { 
-  background: linear-gradient(135deg, #14b8a6, #0891b2); color: #fff; border: none;
-  box-shadow: 0 8px 20px rgba(20,184,166,0.3);
+  background: linear-gradient(135deg, #14b8a6 0%, #0891b2 100%); 
+  color: #fff !important; box-shadow: 0 10px 25px var(--accent-glow);
 }
-.btn.accent:hover { transform: translateY(-2px); filter: brightness(1.1); }
-
-.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
-.chip { 
-  padding: 8px 16px; border-radius: 99px; background: var(--card); border: 1px solid var(--line);
-  color: var(--text); font-weight: 700; font-size: 13px; text-decoration: none;
+.btn.small { 
+  background: #0f172a; color: #fff !important; 
+  padding: 10px 22px; font-size: 14px;
 }
+.btn:hover { transform: translateY(-3px); filter: brightness(1.1); box-shadow: 0 15px 30px var(--accent-glow); }
 
-/* Hero Section */
-.hero { padding: 60px 0; display: grid; grid-template-columns: 1.4fr 0.9fr; gap: 30px; align-items: start; }
-h1 { font-size: clamp(32px, 5vw, 56px); font-weight: 800; line-height: 1.05; margin: 0 0 15px; color: var(--text); }
-.lead { font-size: 18px; color: var(--muted); margin-bottom: 20px; }
-
-/* Cards & Grid */
-.card { 
-  background: var(--card); border: 1px solid var(--line); border-radius: 20px; 
-  padding: 24px; box-shadow: var(--shadow); height: 100%;
+/* Leerschritte & Größen-Hierarchie im Button */
+.btn .btn-top { 
+  display: block; font-size: 11px; font-weight: 600; 
+  opacity: 0.8; text-transform: uppercase; letter-spacing: 0.5px;
+  margin-bottom: 2px; /* Der Leerschritt nach unten */
 }
-.card.note { background: rgba(20,184,166,0.05); border-color: rgba(20,184,166,0.2); }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin-top: 40px; }
+.btn .btn-bottom { display: block; font-size: 16px; font-weight: 800; }
+.btn.small .btn-bottom { font-size: 14px; }
 
-/* Footer */
-.footer { background: #0b1220; color: #64748b; padding: 60px 0; margin-top: 60px; }
-.footer-address { margin-top: 20px; font-size: 12px; line-height: 1.6; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px; }
+/* Grid & Cards */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 50px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 32px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
+.card h3 { font-size: 22px; font-weight: 800; margin: 0 0 12px; }
+.card p { color: var(--muted); margin-bottom: 20px; }
 
-/* Theme Toggle Button */
-.theme-toggle {
-  background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
-  color: #fff; width: 40px; height: 40px; border-radius: 50%; cursor: pointer;
-}
+/* Chips & Footer */
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+.chip { padding: 8px 18px; border-radius: 99px; background: var(--card); border: 1px solid var(--line); color: var(--text); font-weight: 700; font-size: 13px; text-decoration: none; }
+.footer { background: #0b1220; color: #64748b; padding: 80px 0; margin-top: 100px; }
+.footer-address { margin-top: 40px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.05); font-size: 12px; line-height: 1.8; }
 </style>
 </head>
 <body>
