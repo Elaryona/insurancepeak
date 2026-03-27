@@ -7,71 +7,68 @@
 <title>InsurancePeak — Insurance guides for the US market</title><link href="https://insurancepeak.net/" rel="canonical"/>
 <meta content="Plain-English insurance guides for US consumers: car, renters, homeowners, and more." name="description"/>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:wght@700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
 
 :root {
-  --bg: #fcfcfd; --card: #ffffff; --text: #1a1f26; --muted: #5e6b7a;
-  --line: #e9ecef; --accent: #0a111a; --gold: #c5a358;
-  --shadow: 0 12px 40px rgba(0,0,0,0.04); --radius: 16px;
+  --bg: #f3f7fa; --card: #ffffff; --text: #0f172a; --muted: #475569;
+  --line: #e2e8f0; --accent: #007a8c; --shadow: 0 10px 30px rgba(2,6,23,0.08);
+  --radius: 20px;
 }
 
 * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
-body { margin: 0; font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.7; }
-.container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+body { margin: 0; font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
-/* Header - Ultra Clean */
+/* Modern Header */
 header.site-header { 
-  background: #0a111a; 
-  padding: 24px 0; 
-  border-bottom: 4px solid var(--gold); 
-  position: sticky; top: 0; z-index: 100;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); 
+  padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 .header-inner { display: flex; align-items: center; justify-content: space-between; }
-.brand { display: flex; align-items: center; gap: 16px; text-decoration: none; }
-.brand img { width: 42px !important; height: auto !important; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
-.brand-name .title { 
-  font-family: 'Playfair Display', serif; 
-  font-size: 26px; font-weight: 900; color: #fff; margin: 0; letter-spacing: -0.5px; 
-}
-.brand-name .tagline { font-size: 10px; color: var(--gold); font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin: 0; }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.brand img { width: 38px !important; height: auto !important; }
+.brand-name .title { font-size: 22px; font-weight: 800; color: #fff; margin: 0; letter-spacing: -0.5px; }
+.brand-name .tagline { font-size: 11px; color: #38bdf8; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin: 0; }
 
-nav.topnav { display: flex; gap: 24px; }
-nav.topnav a { color: rgba(255,255,255,0.8); font-weight: 600; text-decoration: none; font-size: 14px; transition: 0.3s; }
-nav.topnav a:hover { color: var(--gold); }
+nav.topnav { display: flex; gap: 20px; }
+nav.topnav a { color: rgba(255,255,255,0.8); font-weight: 600; text-decoration: none; font-size: 14px; }
+nav.topnav a:hover { color: #fff; }
 
-/* Hero Section - The Magazine Look */
-.hero { padding: 100px 0 80px; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; }
-h1 { 
-  font-family: 'Playfair Display', serif; 
-  font-size: clamp(40px, 6vw, 64px); 
-  line-height: 1.05; margin-bottom: 24px; color: var(--accent); 
-}
-.lead { font-size: 20px; color: var(--muted); margin-bottom: 32px; font-weight: 400; max-width: 500px; }
+/* Hero Section - Modern & Clean */
+.hero { padding: 80px 0 60px; display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 40px; align-items: start; }
+h1 { font-size: clamp(36px, 5vw, 54px); font-weight: 800; line-height: 1.1; margin-bottom: 20px; color: #0f172a; letter-spacing: -1px; }
+.lead { font-size: 19px; color: var(--muted); margin-bottom: 25px; }
 
-/* Buttons - Premium Feel */
+/* Die geliebten Buttons & Chips */
 .btn { 
-  display: inline-flex; align-items: center; padding: 18px 32px; border-radius: 4px; 
-  text-decoration: none; font-weight: 700; transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-  letter-spacing: 0.5px; text-transform: uppercase; font-size: 13px;
+  display: inline-flex; align-items: center; padding: 14px 28px; border-radius: 99px; 
+  text-decoration: none; font-weight: 700; transition: 0.3s; font-size: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
-.btn.accent { background: var(--accent); color: #fff; border: 1px solid var(--accent); }
-.btn.accent:hover { background: #fff; color: var(--accent); border-color: var(--accent); transform: translateY(-3px); }
-
-/* Content Cards */
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; margin: 60px 0; }
-.card { 
-  background: var(--card); border: 1px solid var(--line); border-radius: 4px; 
-  padding: 40px; transition: 0.4s; position: relative; overflow: hidden;
+.btn.accent { 
+  background: linear-gradient(135deg, #007a8c 0%, #00a3b8 100%); 
+  color: #fff; border: none; 
 }
-.card:hover { transform: translateY(-10px); box-shadow: 0 30px 60px rgba(0,0,0,0.08); border-color: var(--gold); }
-.card h3 { font-family: 'Playfair Display', serif; font-size: 24px; margin: 0 0 16px; color: var(--accent); }
+.btn.accent:hover { transform: translateY(-2px); box-shadow: 0 12px 25px rgba(0,122,140,0.3); }
 
-/* Footer - The Wyoming Sign-off */
-.footer { background: #0a111a; color: #8492a6; padding: 80px 0; margin-top: 100px; }
-.footer b { color: #fff; font-family: 'Playfair Display', serif; font-size: 20px; display: block; margin-bottom: 20px; }
+.chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 25px; }
+.chip { 
+  padding: 8px 16px; border-radius: 99px; background: #fff; border: 1px solid var(--line);
+  color: #0f172a; font-weight: 600; font-size: 13px; text-decoration: none; transition: 0.2s;
+}
+.chip:hover { border-color: #007a8c; color: #007a8c; background: #f0f9fa; }
+
+/* Cards */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 50px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 30px; box-shadow: var(--shadow); }
+.card h3 { font-size: 22px; font-weight: 800; margin-bottom: 12px; color: #0f172a; }
+.note { background: #eff6ff; border-color: #dbeafe; }
+
+/* Footer */
+.footer { background: #0f172a; color: #94a3b8; padding: 60px 0; margin-top: 80px; }
 .footer-address { 
-  margin-top: 40px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.05); 
-  font-size: 12px; letter-spacing: 1px; color: var(--gold);
+  margin-top: 30px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.05); 
+  font-size: 13px; line-height: 1.6; 
 }
 </style>
 </head>
